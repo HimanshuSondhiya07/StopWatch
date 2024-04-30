@@ -1,0 +1,140 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #d3d6db;
+    display: flex;
+    justify-content: center;
+    height: 97vh;
+    margin: 8px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #3a4750;
+    overflow: hidden;
+    width: 100%; /* Change width to full width */
+    max-width: 400px; /* Set max-width */
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.stopwatch {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.display {
+    text-align: center;
+    animation: scaleIn 0.5s ease forwards;
+}
+
+#timer {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.lap-counter {
+    padding: 20px;
+    background-color: #d3d6db;
+    border-top: 1px solid #ccc;
+}
+
+.lap-counter h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.lap-times {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 15px;
+}
+
+.lap-times li {
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #303841;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.control-btn {
+    background-color: #fd576d;
+    color: #303841;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #ff8787;
+}
+
+.control-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 500px) { 
+    .container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .control-btn {
+        margin: 5px 0;
+    }
+}
